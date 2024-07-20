@@ -15,6 +15,7 @@ This Laravel 11 web application, powered by FilamentPHP 3, includes two panels: 
 ## Setup
 ```bash
 git clone <url>
+cd Project-Management
 cd <dashboard-app>
 
 composer install
@@ -23,6 +24,7 @@ npm install
 
 **Rename .env.example to .env and update the database and other settings**
 ```bash
+php artisan key:generatete
 php artisan migrate:fresh --seed
 php artisan serve
 ```
