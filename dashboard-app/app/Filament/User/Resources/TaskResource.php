@@ -4,6 +4,9 @@ namespace App\Filament\User\Resources;
 
 use App\Filament\User\Resources\TaskResource\Pages;
 use App\Filament\User\Resources\TaskResource\RelationManagers;
+use App\Filament\User\Resources\TaskResource\Widgets\TaskdeletedWidget;
+use App\Filament\User\Resources\TaskResource\Widgets\TaskinprogressWidget;
+use App\Filament\User\Resources\TaskResource\Widgets\TaskpendingWidget;
 use App\Models\Task;
 use Filament\Forms;
 use Filament\Forms\Components\Fieldset;
@@ -94,6 +97,13 @@ class TaskResource extends Resource
             'index' => Pages\ListTasks::route('/'),
             'create' => Pages\CreateTask::route('/create'),
             'edit' => Pages\EditTask::route('/{record}/edit'),
+        ];
+    }
+    public static function getWidgets(): array {
+        return [
+            TaskinprogressWidget::class,
+            TaskdeletedWidget::class,
+            TaskpendingWidget::class,
         ];
     }
 }

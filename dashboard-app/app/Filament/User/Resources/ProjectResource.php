@@ -4,6 +4,7 @@ namespace App\Filament\User\Resources;
 
 use App\Filament\User\Resources\ProjectResource\Pages;
 use App\Filament\User\Resources\ProjectResource\RelationManagers;
+use App\Filament\Widgets\NBProjectWidget;
 use App\Models\Project;
 use Filament\Tables\Actions\DeleteAction;
 use Filament\Forms;
@@ -81,6 +82,12 @@ class ProjectResource extends Resource
             'index' => Pages\ListProjects::route('/'),
             'create' => Pages\CreateProject::route('/create'),
             'edit' => Pages\EditProject::route('/{record}/edit'),
+        ];
+    }
+
+    public static function getWidgets(): array {
+        return [
+           NBProjectWidget::class
         ];
     }
 }
